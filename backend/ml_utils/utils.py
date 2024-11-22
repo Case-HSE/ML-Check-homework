@@ -12,3 +12,7 @@ def encode_image(file_path: str):
     with open(file_path, "rb") as fid:
         file_content = fid.read()
     return base64.b64encode(file_content).decode("utf-8")
+
+
+def bytes_to_base64(image_bytes: bytes):
+    return base64.b64encode(image_bytes).decode("utf-8")

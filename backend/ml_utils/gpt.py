@@ -1,7 +1,7 @@
 import asyncio
 
-from backend.config import folder_id, role_text, gpt_key
-from utils import request
+from config import folder_id, gpt_key
+from ml_utils.utils import request
 
 headers = {
     "Content-Type": "application/json",
@@ -13,7 +13,7 @@ default_answer = "К сожалению, я не могу ничего сказ�
 gpt_url = "https://llm.api.cloud.yandex.net/foundationModels/v1/completion"
 
 
-async def gpt_prompt(request_message: str) -> str | None:
+async def gpt_prompt(request_message: str, role: str = " ") -> str | None:
     prompt = {
         "modelUri": model_uri,
         "completionOptions": {
@@ -24,7 +24,7 @@ async def gpt_prompt(request_message: str) -> str | None:
         "messages": [
             {
                 "role": "system",
-                "text": role_text
+                "text": role
             },
             {
                 "role": "user",
@@ -39,6 +39,8 @@ async def gpt_prompt(request_message: str) -> str | None:
         result_text = request_result["result"]["alternatives"][0]["message"]["text"]
         if result_text != default_answer:
             return result_text
+
+    return request_result
 
 
 if __name__ == '__main__':

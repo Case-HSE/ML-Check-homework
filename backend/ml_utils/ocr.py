@@ -1,8 +1,8 @@
 import asyncio
 
-from backend.config import ocr_key
+from config import ocr_key
 
-from utils import request, encode_image
+from .utils import request, encode_image
 
 
 headers = {
@@ -13,12 +13,12 @@ headers = {
 ocr_url = "https://ocr.api.cloud.yandex.net/ocr/v1/recognizeText"
 
 
-async def ocr_prompt(image_content) -> str | list[str]:
+async def ocr_prompt(image_content) -> str:
     if isinstance(image_content, list):
         request_result = []
         for current_image_content in image_content:
             request_result.append(await ocr_prompt(image_content=current_image_content))
-        return request_result
+        return "\n".join(request_result)
 
     else:
         data = {
@@ -29,7 +29,9 @@ async def ocr_prompt(image_content) -> str | list[str]:
         }
 
         request_result = await request(url=ocr_url, json_data=data, request_headers=headers)
-        return request_result["result"]["textAnnotation"]["fullText"]
+        if "result" in request_result:
+            return request_result["result"]["textAnnotation"]["fullText"]
+        return "Error!"
 
 
 
