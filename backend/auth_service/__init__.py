@@ -2,10 +2,10 @@ import json
 
 from fastapi import APIRouter
 
-from . import handlers
+from auth_service import handlers
 
-from database.credentials import credentials_data, credentials_database_path
-from database.onboarding import onboarding_data, users_onboarding_database_path
+from auth_service.database.credentials import credentials_data, credentials_database_path
+from auth_service.database.onboarding import onboarding_data, users_onboarding_database_path
 
 
 auth_router = APIRouter(tags=["Authentification service"])

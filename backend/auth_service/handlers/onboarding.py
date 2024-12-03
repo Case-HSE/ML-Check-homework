@@ -4,7 +4,7 @@ from typing import Annotated
 
 from .auth import security
 
-from database.onboarding import onboarding_data
+from auth_service.database.onboarding import onboarding_data
 from auth_service.models import OnBoardingModel, StatusModel
 
 

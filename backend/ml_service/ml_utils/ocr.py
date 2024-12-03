@@ -1,6 +1,6 @@
 import asyncio
 
-from config import ocr_key
+from ml_service.config import ocr_key
 
 from .utils import request, encode_image
 

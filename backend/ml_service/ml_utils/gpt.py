@@ -1,7 +1,7 @@
 import asyncio
 
-from config import folder_id, gpt_key
-from ml_utils.utils import request
+from ml_service.config import folder_id, gpt_key
+from ml_service.ml_utils.utils import request
 
 headers = {
     "Content-Type": "application/json",

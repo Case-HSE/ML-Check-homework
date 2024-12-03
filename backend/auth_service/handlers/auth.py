@@ -2,11 +2,11 @@ from fastapi import APIRouter, Depends
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from typing import Annotated
 
-from utils.hash import get_hash
+from auth_service.utils.hash import get_hash
 
-from database.credentials import credentials_data
+from auth_service.database.credentials import credentials_data
 
-from exceptions import wrong_login_password_ex
+from auth_service.exceptions import wrong_login_password_ex
 from auth_service.models import AddAccountModel, StatusModel
 
 

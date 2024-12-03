@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-import handlers
+from ml_service import handlers
 
 
 ml_router = APIRouter(tags=["ML service"])

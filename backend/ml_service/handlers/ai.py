@@ -1,10 +1,10 @@
 from fastapi import APIRouter, UploadFile
 
-from ml_utils.gpt import gpt_prompt
-from ml_utils.ocr import ocr_prompt
-from ml_utils.utils import bytes_to_base64
+from ml_service.ml_utils.gpt import gpt_prompt
+from ml_service.ml_utils.ocr import ocr_prompt
+from ml_service.ml_utils.utils import bytes_to_base64
 
-from models import TextModel, TextResponseModel
+from ml_service.models import TextModel, TextResponseModel
 
 
 router = APIRouter(prefix="/ai")

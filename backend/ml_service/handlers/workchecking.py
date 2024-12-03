@@ -1,10 +1,10 @@
 from fastapi import APIRouter, UploadFile
 from typing import List
 
-from models import MultyTextModel, TextWorkCheckingModel
+from ml_service.models import MultyTextModel, TextWorkCheckingModel
 
-from ml_utils.workchecking import check_homework_from_text_multy_pupil, check_homework_from_images_multy_pupil
-from ml_utils.utils import bytes_to_base64
+from ml_service.ml_utils.workchecking import check_homework_from_text_multy_pupil, check_homework_from_images_multy_pupil
+from ml_service.ml_utils.utils import bytes_to_base64
 
 
 router = APIRouter(prefix="/workchecking")

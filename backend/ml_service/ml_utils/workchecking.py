@@ -1,7 +1,7 @@
 from .gpt import gpt_prompt
 from .ocr import ocr_prompt
 
-from config import role_text
+from ml_service.config import role_text
 
 
 async def __check_homework_from_text_single_pupil(tasks: str, solutions: str) -> str:

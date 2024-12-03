@@ -14,4 +14,4 @@ class MultyTextModel(BaseModel):
 
 
 class TextWorkCheckingModel(MultyTextModel):
-    tasks: str
+    tasks: list[str]
