@@ -12,8 +12,9 @@ router = APIRouter(prefix="/workchecking")
 
 @router.post("/from_text")
 async def check_from_text(body: TextWorkCheckingModel) -> MultyTextModel:
+    tasks = "\n".join(body.tasks)
     model_answer = await check_homework_from_text_multy_pupil(
-        tasks=body.tasks,
+        tasks=tasks,
         solutions=body.texts
     )
     return MultyTextModel(texts=model_answer)
