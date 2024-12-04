@@ -6,6 +6,7 @@ from auth_service import handlers
 
 from auth_service.database.credentials import credentials_data, credentials_database_path
 from auth_service.database.onboarding import onboarding_data, users_onboarding_database_path
+from auth_service.database.subjects import subjects_list, subjects_database_path
 
 
 auth_router = APIRouter(tags=["Authentification service"])
@@ -19,3 +20,6 @@ async def shutdown_event():
 
     with open(users_onboarding_database_path, "w") as json_file:
         json.dump(onboarding_data, json_file)
+
+    with open(subjects_database_path, "w") as json_file:
+        json.dump(subjects_list, json_file)

@@ -1,6 +1,7 @@
 .idea
 credentials.json
 onboarding_data.json
+subjects.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

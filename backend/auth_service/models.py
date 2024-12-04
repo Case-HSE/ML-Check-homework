@@ -21,3 +21,7 @@ class OnBoardingModel(BaseModel):
     achievements: list[str]
     year_purposes: list[str]
     final_class: int
+
+
+class SubjectModel(BaseModel):
+    subject: str
