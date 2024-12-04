@@ -105,6 +105,72 @@ Output:
 }
 ```
 
+### Get subjects
+Get list of available subjects.
+```html request
+GET /subjects/getsublist
+```
+Output:
+```html request
+[
+  "Математика",
+  "Русский язык",
+  "Литература",
+  "История",
+  "Физика",
+  "Информатика",
+  "Английский язык",
+  "Обществознание",
+  "Химия",
+  "Биология",
+  "География",
+  "ОБЗР",
+  "МХК",
+  "Экономика",
+  "Право",
+  "Китайский язык",
+  "Физкультура",
+  "Испанский язык"
+]
+```
+
+### Add subject
+Add subject to a subject list.
+```html request
+POST /subjects/addsubject
+```
+Input:
+```html request
+{
+  "subject": "SVO"
+}
+```
+Output:
+```html request
+{
+  "status": "success"
+}
+```
+
+### Delete subject
+Remove subject from subject list.
+```html request
+DELETE /subjects/deletesubject
+```
+Input:
+```html request
+{
+  "subject": "SVO"
+}
+```
+Output:
+```html request
+{
+  "status": "success"
+}
+```
+
+
 # ML Service
 
 ### GPT prompt.
